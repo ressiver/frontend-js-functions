@@ -1,9 +1,14 @@
 ﻿function max(array){
-    var max = array[0];
-    for(var i = 0; i < array.length; i++){
-        if(max < array[i])
-        max = array[i];
-    }
+	if(array === undefined){
+		return;
+	}
+	else{
+    	var max = array[0];
+    	for(var i = 0; i < array.length; i++){
+        	if(max < array[i])
+       		max = array[i];
+    	}
+	}
     return max;
 }
 
@@ -17,11 +22,10 @@ function min(array){
 }
 
 function sum() {
-  var result = 0;
-
-  for (var i = 0; i < arguments.length; i++) {
-    result += arguments[i];
-  }
-
-  return result;
+	var result = 0;
+	for (var i = 0; i < arguments.length; i++) {
+    	if (typeof (arguments[i]) != 'number') continue;
+		result += arguments[i];
+  	}
+	return result;
 }
