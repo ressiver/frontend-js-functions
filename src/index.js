@@ -1,36 +1,42 @@
-﻿function max(array){
-	if(array === undefined){
+﻿function max(array) {
+	if (array === undefined) {
 		return;
 	}
-	else{
-    	var max = array[0];
-    	for(var i = 0; i < array.length; i++){
-        	if(max < array[i])
-       		max = array[i];
-    	}
+	else {
+		var maximum = array[0];
+		for (var i = 0; i < array.length; i++) {
+			if (maximum < array[i])
+				maximum = array[i];
+		}
 	}
-    return max;
+	return maximum;
 }
 
-function min(array){
-	if(array === undefined){
+function min(array) {
+	if (array === undefined) {
 		return;
 	}
-	else{
-    	var min = array[0];
-    	for(var i = 0; i > array.length; i++){
-        	if(min > array[i])
-        	min = array[i];
+	else {
+		var minimum;
+		for (var i = 0; i < array.length; i++) {
+			if (typeof (array[i]) == 'number') {
+				if (minimum === undefined) {
+					minimum = array[i]; continue;
+				}
+				if (minimum >= array[i]) {
+					minimum = array[i];
+				}
+			}
 		}
-    }
-    return min;
+		return minimum;
+	}
 }
 
 function sum() {
 	var result = 0;
 	for (var i = 0; i < arguments.length; i++) {
-    	if (typeof (arguments[i]) != 'number') continue;
+		if (typeof (arguments[i]) != 'number') continue;
 		result += arguments[i];
-  	}
+	}
 	return result;
 }
